@@ -1,0 +1,82 @@
+QUESTION___________________________________________
+
+please add when available.
+
+ANSWER______________________________________________
+
+The idea is to check if the first element can be changed to make AP, then try the second and then third.
+The way we will do that is, we will first calculate difference(d) of AP considering the other two elements are in AP.
+
+With the difference in hand, we will check if the number required to complete the AP can be made by multiplying a positive integer to the element. 
+We will do this with help of Modulo Operator.
+
+PsuedoCode:
+
+1)start a loop for it to run for 3 times.
+  2)in the first loop;
+    3) d = a3-a2 (since, this is for the first element, we will consider 2nd and 3rd element to be in AP and calculate difference(d) ).
+      4) if (a2-d)%a1 == 0  (i.e. if modulo of the element that is supposed to be before a2 in the AP and a1 is zero that is a1 is multiple of (a2-d)).
+        5) if (a2-d) > 0;  (this case will cut out the cases that will make a negative number,since, we are told that the numbers are positive integer.)
+          6) return true;
+  repeat the same more two times.
+  
+  
+CODE______________________
+#include<bits/stdc++.h>
+using namespace std;
+
+bool ans(int a1,int a2,int a3){
+	
+		int d;
+		
+
+		for(int i = 1;i<=3;i++){
+			if(i == 1){
+				d = a3-a2;
+				if((a2-d)%a1 == 0){
+					if((a2-d) > 0){
+						return true;
+					}
+				}
+			}
+
+			else if(i == 2 && (a3-a1)%2 == 0){
+				d = (a3-a1)/2;
+				if((a1+d)%a2 == 0){
+					if((a1+d) > 0){
+						return true;
+					}
+				}	
+			}
+
+			else if(i == 3){
+				d = a2-a1;
+				if((a2+d)%a3 == 0){
+					if((a2+d) > 0){
+						return true;
+					}	
+				}
+			}
+			
+		}
+		return false;
+}
+
+int main(){
+
+	int t;
+	cin>>t;
+
+	while(t--){
+
+		int a1,a2,a3;
+		cin>>a1>>a2>>a3;
+
+		if(ans(a1,a2,a3) == 0){
+			cout<<"NO"<<endl;
+		}
+		else{
+			cout<<"YES"<<endl;
+		}
+	}
+}
