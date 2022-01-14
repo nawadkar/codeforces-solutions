@@ -1,0 +1,7 @@
+1)start a loop for it to run for 3 times.
+  2)in the first loop;
+    3) d = a3-a2 (since, this is for the first element, we will consider 2nd and 3rd element to be in AP and calculate difference(d) ).
+      4) if (a2-d)%a1 == 0  (i.e. if modulo of the element that is supposed to be before a2 in the AP and a1 is zero that is a1 is multiple of (a2-d)).
+        5) if (a2-d) > 0;  (this case will cut out the cases that will make a negative number,since, we are told that the numbers are positive integer.)
+          6) return true;
+  repeat the same more two times for rest two cases.
