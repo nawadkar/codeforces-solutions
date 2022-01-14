@@ -40,7 +40,7 @@ PsuedoCode:__________________________________________
   
 CODE______________________
 
-
+`
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -99,3 +99,4 @@ int main(){
 		}
 	}
 }
+`
