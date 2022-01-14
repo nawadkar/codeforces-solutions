@@ -1,0 +1,5 @@
+The idea is to check if the first element can be changed to make AP, then try the second and then third.
+The way we will do that is, we will first calculate difference(d) of AP considering the other two elements are in AP.
+
+With the difference in hand, we will check if the number required to complete the AP can be made by multiplying a positive integer to the element. 
+We will do this with help of Modulo Operator.
